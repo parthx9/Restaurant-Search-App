@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class SearchForm extends StatefulWidget {
   Function onSearch;
+
   SearchForm(this.onSearch);
   @override
   _SearchFormState createState() => _SearchFormState();

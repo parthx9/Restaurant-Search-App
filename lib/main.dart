@@ -50,6 +50,7 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         title: Text(widget.title),
         backgroundColor: Colors.red,
@@ -63,22 +64,24 @@ class _SearchPageState extends State<SearchPage> {
               height: 20,
             ),
             _restaurants == null
-                ? Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.search,
-                        size: 118,
-                        color: Colors.black12,
-                      ),
-                      Text(
-                        'No Results To Display',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                            color: Colors.black12),
-                      )
-                    ],
+                ? Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.search,
+                          size: 118,
+                          color: Colors.black12,
+                        ),
+                        Text(
+                          'No Results To Display',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.black12),
+                        )
+                      ],
+                    ),
                   )
                 : Expanded(
                     child: ListView(
